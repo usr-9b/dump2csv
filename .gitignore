@@ -1,0 +1,21 @@
+# Byte-compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Editor/IDE specific files
+.vscode/
+.idea/
+
+# Virtual environment
+venv/
+.venv/
+
+# Test reports/coverage
+.coverage
+htmlcov/
+
+# Linting/formatting tools
+.ruff_cache/
+.flake8
