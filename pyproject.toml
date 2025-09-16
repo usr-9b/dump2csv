@@ -1,7 +1,7 @@
 [project]
-name = "dump2data"
+name = "dump2csv"
 version = "0.1.0"
-description = "Add your description here"
+description = "extract data from .sql dumps to .csv files"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = []
