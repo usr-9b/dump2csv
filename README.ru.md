@@ -7,7 +7,7 @@ cli ультилита для парсинга данных из `.sql` дамп
 ### CLI
 
 ```bash
-python dump2data.py -i <path_to_dump> -od <output_dir>
+python dump2data.py -i <path_to_dump>
 ```
 
 -----

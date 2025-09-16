@@ -7,7 +7,7 @@ extract data from .sql dumps to .csv files
 ### CLI
 
 ```bash
-python dump2data.py -i <path_to_dump> -od <output_dir>
+python dump2data.py -i <path_to_dump>
 ```
 
 -----
