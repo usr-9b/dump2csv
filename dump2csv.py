@@ -12,7 +12,7 @@ def parse_sql_dump(
     input_file: str, tables_whitelist: list[str]
 ) -> dict[str, list[list[str]]]:
     """
-    parseq .sql dump file and extracts data for specified tables.
+    parse .sql dump file and extracts data for specified tables.
     """
     table_values: dict[str, list[list[str]]] = {}
     current_table: str = ""
