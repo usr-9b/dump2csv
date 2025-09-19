@@ -20,11 +20,14 @@ def parse_sql_dump(
 
     with open(input_file, "r") as f:
         for line in f:
-            line_stripped = line.strip().lower()
+            line_stripped = line.strip()
+            line_lower = line_stripped.lower()
 
-            if line_stripped.startswith("create table"):
+            if line_lower.startswith("create table"):
                 is_whitelisted = False
-                match = re.search(r"create\s+table\s+`?(\w+)`?", line_stripped)
+                match = re.search(
+                    r"create\s+table\s+`?(\w+)`?", line_stripped, re.IGNORECASE
+                )
                 if match:
                     table_name = match.group(1)
                     if not tables_whitelist or table_name in tables_whitelist:
@@ -33,8 +36,8 @@ def parse_sql_dump(
                         is_whitelisted = True
                     else:
                         current_table = ""
-            elif line_stripped.startswith("insert into") and is_whitelisted:
-                match = re.search(r"values\s*\((.*)\);", line_stripped)
+            elif line_lower.startswith("insert into") and is_whitelisted:
+                match = re.search(r"values\s*\((.*)\);", line_stripped, re.IGNORECASE)
                 if match:
                     values_str = match.group(1)
                     values = [v.strip().strip("'\"") for v in values_str.split(",")]
